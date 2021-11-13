@@ -1,0 +1,54 @@
+<%-include("partials/header"); %>
+
+<div class="wrap">
+
+<!-- Title -->
+  <div class="d-flex justify-content-center bg-light rounded-2 my-3 py-2 shadow-sm">
+    <h2 class="titleHeading"><%= title %></h2>
+  </div>
+
+<!-- List -->
+  <ul class="list-group w-500 shadow-sm">
+    <% foundItems.forEach(function(item){ %>
+    <li class="list-group-item p-3">
+      <div class="d-flex">
+
+        <% if((title) === "All Lists"){ %>
+        <div class="flex-grow-1 px-3 textAfterCheckbox"><a class="listLink" href="/<%= item.name %>"><%= item.name %></a></div>
+        <% }else{ %>
+        <input class="form-check-input me-3 roundedCheckbox" type="checkbox" name="checkbox" value="<%= item._id %>">
+        <div class="flex-grow-1 textAfterCheckbox"><%= item.name %></div>
+        <% } %>
+
+        <div class="closeBtn">
+          <form action="/delete" method="post">
+            <button type="submit" name="idToDelete" value="<%= item._id %>" class="btn-close btn-sm"></button>
+            <input type="hidden" name="listName" value="<%= title %>">
+          </form>
+        </div>
+
+      </div>
+    </li>
+    <% }); %>
+  </ul>
+
+  <% if((title) === "All Lists"){ %>
+  <form action="/lists/allLists" method="post">
+    <% }else{ %>
+    <form action="/" method="post">
+      <% } %>
+
+      <div class="input-group mb-3 p-2">
+        <input type="text" class="form-control p-2" name="newItem" placeholder="<%= placeholder %>" required>
+        <button class="btn btn-outline-secondary" type="submit" name="button" value="<%= title %>" id="button-addon2"><span class="addBtn">+</span></button>
+      </div>
+    </form>
+
+    <div class="text-center navTo">
+      <a class="px-3" href="/">Default List</a>
+      <a class="px-3" href="/lists/allLists">All Lists</a>
+    </div>
+
+</div>
+
+<%-include("partials/footer"); %>

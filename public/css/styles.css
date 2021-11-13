@@ -1,0 +1,78 @@
+body{
+  margin: 0;
+}
+/* Logo */
+.logoHeading{
+  font-family: 'Michroma', sans-serif;
+  font-size: 2rem;
+}
+
+/* Divider */
+.b-example-divider{
+  height: 3rem;
+  background-color: rgba(0, 0, 0, .1);
+  border: solid rgba(0, 0, 0, .15);
+  border-width: 1px 0;
+  box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+}
+
+/* Title */
+.titleHeading{
+  font-family: 'Gugi', cursive;
+}
+
+/* For Form */
+.w-500{
+  width: 500px;
+}
+
+.form-check-input[type=checkbox]{
+  border-radius: 0.5rem;
+}
+
+.roundedCheckbox:checked + .textAfterCheckbox{
+  text-decoration: line-through;
+  text-decoration-color: #0d6efd;
+}
+
+.closeBtn{
+  opacity: 0.2;
+}
+
+.closeBtn:hover{
+  opacity: 0.75;
+}
+
+.addBtn{
+  font-family: 'Gugi', cursive;
+  font-size: 1.2rem;
+}
+
+.listLink{
+  font-family: 'Gugi', cursive;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+/* Links to other page */
+.navTo{
+  font-family: 'Gugi', cursive;
+  font-size: 0.9rem;
+}
+
+/* For smaller devices */
+@media (max-width: 500px) {
+  .logoHeading{
+    margin: 0 auto;
+  }
+
+  .w-500{
+    width: 400px;
+  }
+}
+
+
+/* google Fonts
+font-family: 'Gugi', cursive;
+font-family: 'Michroma', sans-serif;
+*/
